@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{ int x;
+  scanf("%d",&x);
+  
+  int w=x;
+  int bit=0;
+  int i;
+  while(w!=0)
+  { w=w/10;
+    bit++;  //bit is x's bit
+  }
+ 
+ int a[bit];
+ int b=x;
+ for(i=0;i<bit;i++)
+ { a[i]=b%10;
+   b=b/10;    //a[bit] is every bit of x
+ }
+ 
+ int r[bit];
+ for(i=0;i<bit;i++)
+  r[i]=a[i]*pow(2,i);
+ int result=0;
+ for(i=0;i<bit;i++)
+ result=result+r[i];
+ 
+ printf("%d",result);
+ return 0;
+
+ 
+
+ 
+  
+}
